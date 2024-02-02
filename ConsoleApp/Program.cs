@@ -1,33 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Schema;
 
-namespace ConsoleApp4
+namespace LEC
 {
-    internal class Program
+    //creat a student class
+    //var to store the name
+    //var to store 3 marks(array)display the student details with the marks
+
+    public class Student
     {
-        static void Main()
-        {
-            Console.WriteLine("Enter the number of Fibonacci term:");
-            int n = int.Parse(Console.ReadLine());
+        public string name;
+        public int[] marks;
 
-            Console.WriteLine("FGGGBHBHibonacci number:");
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(Fibonacci(i) + " ");
-            }NBB
-            Console.ReadLine();
+        public void StoreDetails(string StudentName, int[] stuMarks)
+        {
+            name = StudentName;
+            marks = stuMarks;
         }
-
-        static int Fibonacci(int n)
+        public void DisplayDetails()
         {
-            if (n <= 1)
+            Console.WriteLine($"Name: {name}");
+
+            for (int i = 0; i < marks.Length; i++)
             {
-                return n;
+                Console.WriteLine($"Marks: {marks[i]}");
+
+
             }
-            else
-            {
-                return Fibonacci(n - 1) + Fibonacci(n - 2);
-            }
+            Console.WriteLine("\n");
         }
     }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Student student1 = new Student();
+            Student student2 = new Student();
 
+            student1.StoreDetails("ann", new int[] { 1, 2, 3 });
+            student2.StoreDetails("ron", new int[] { 4, 5, 6 });
+
+            student1.DisplayDetails();
+            student2.DisplayDetails();
+            Console.ReadLine();
+
+
+        }
+    }
 }
