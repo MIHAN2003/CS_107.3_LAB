@@ -9,11 +9,11 @@ namespace ConsoleApp4
             Console.WriteLine("Enter the number of Fibonacci term:");
             int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Fibonacci number:");
+            Console.WriteLine("FGGGBHBHibonacci number:");
             for (int i = 0; i < n; i++)
             {
                 Console.Write(Fibonacci(i) + " ");
-            }
+            }NBB
             Console.ReadLine();
         }
 
