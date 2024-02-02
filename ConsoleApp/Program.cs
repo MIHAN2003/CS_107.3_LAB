@@ -10,41 +10,41 @@ namespace q1
     {
         static void Main()
         {
-            Console.WriteLine("Enter the number: ");
-            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Name: ");
+            string name = Console.ReadLine();
 
-            for (int i = 1; i < 13; i++)
+            Console.WriteLine("Enter Mark: ");
+            int mark = int.Parse(Console.ReadLine());
+
+            string grade;
+
+            if (mark >= 100)
             {
-                int res = num * i;
-                Console.WriteLine(num + "x" + i + "=" + res);
+                Console.WriteLine("Wrong Marks");
+                grade = "error";
             }
-            Console.ReadLine();
-
-        }
-
-
-
-    }
-}using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace q1
-{
-    internal class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Enter the number: ");
-            int num = int.Parse(Console.ReadLine());
-
-            for (int i = 1; i < 13; i++)
+            else if (mark >= 75)
             {
-                int res = num * i;
-                Console.WriteLine(num + "x" + i + "=" + res);
+                grade = "A";
             }
+            else if (mark >= 60)
+            {
+                grade = "B";
+            }
+            else if (mark >= 50)
+            {
+                grade = "C";
+            }
+            else if (mark >= 40)
+            {
+                grade = "D";
+            }
+            else
+            {
+                grade = "Failed";
+            }
+
+            Console.WriteLine(name + " your Grade is " + grade);
             Console.ReadLine();
 
         }
