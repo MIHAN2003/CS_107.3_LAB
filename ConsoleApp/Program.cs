@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ConsoleApp4
+namespace q1
 {
     internal class Program
     {
@@ -28,6 +32,6 @@ namespace ConsoleApp4
                 return Fibonacci(n - 1) + Fibonacci(n - 2);
             }
         }
-    }
 
+    }
 }
