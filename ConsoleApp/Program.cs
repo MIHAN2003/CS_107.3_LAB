@@ -6,31 +6,25 @@ using System.Threading.Tasks;
 
 namespace q1
 {
-    public class TempuratureTracker
+    public class Product
     {
-        public int[] temp = new int[7];
+        public string ProductName;
+        public int Price;
 
-
+        public Product(string productName, int price)
+        {
+            ProductName = productName;
+            Price = price;
+        }
     }
     internal class Program
     {
         public static void Main(string[] args)
         {
-            TempuratureTracker obj1 = new TempuratureTracker();
+            Product product1 = new Product("apple", 50);
 
-            for (int i = 0; i < 7; i++)
-            {
-                Console.WriteLine("Enter the Tempurature:");
-                obj1.temp[i] = int.Parse(Console.ReadLine());
-            }
-
-            Console.WriteLine("Weekly Tempurature Report");
-            for (int i = 0; i < 7; i++)
-            {
-                Console.WriteLine($"{obj1.temp[i]} celcius");
-            }
+            Console.WriteLine($"Product name is {product1.ProductName} and it's price is {product1.Price}.");
             Console.ReadLine();
-
         }
 
 
