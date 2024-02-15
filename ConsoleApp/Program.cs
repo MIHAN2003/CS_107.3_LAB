@@ -6,42 +6,32 @@ using System.Threading.Tasks;
 
 namespace Q1
 {
-    public class EncapData
+    public class Animal
     {
-        public double Radius;
-        private double Pi = 3.14;
+      public void Speak()
+        {
+            Console.Write("I am an Animal  ");
 
-        public double radius
-        {
-            get{ return Radius; }
-            set{ Radius = value; }
         }
-        public double Area()
-        { 
-            double area = Pi * Radius * Radius;
-            return area;
-        }
-        public double Circumference()
+    }
+    public class Dog : Animal 
+    {
+        public void NumberofLegs()
         {
-            double circum = Pi * Radius * Radius;
-            return circum;
+            Console.Write("I have 4 Legs");
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
+            Dog dog = new Dog();
+            dog.Speak();
+            dog.NumberofLegs();
 
-            EncapData data = new EncapData();
-        Console.WriteLine("Enter the Radius of the circle");
-        double radius = double.Parse(Console.ReadLine());
+            Console.ReadLine();
 
-        data.radius = radius;
-
-        Console.WriteLine($"Area of the circle is  {data.Area()}");
-        Console.WriteLine($"Circumference of the circle is  {data.Circumference()}");
-
-        Console.ReadLine();
+         
 
         }
     }
