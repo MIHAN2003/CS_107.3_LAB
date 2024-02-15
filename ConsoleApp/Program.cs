@@ -6,24 +6,38 @@ using System.Threading.Tasks;
 
 namespace q1
 {
-    public class Product
+    public class LibraryBook
     {
-        public string ProductName;
-        public int Price;
+        public string Title;
+        public string Authour;
+        public string Availablity = "available";
 
-        public Product(string productName, int price)
+        public LibraryBook(string title, string authour)
         {
-            ProductName = productName;
-            Price = price;
+            Title = title;
+            Authour = authour;
+        }
+
+        public void BorrorwBook()
+        {
+            Availablity = "Not available";
         }
     }
     internal class Program
     {
         public static void Main(string[] args)
         {
-            Product product1 = new Product("apple", 50);
+            LibraryBook book1 = new LibraryBook("title1", "authour1");
+            LibraryBook book2 = new LibraryBook("title2", "authour2");
+            LibraryBook book3 = new LibraryBook("title3", "authour3");
 
-            Console.WriteLine($"Product name is {product1.ProductName} and it's price is {product1.Price}.");
+            book2.BorrorwBook();
+            book3.BorrorwBook();
+
+            Console.WriteLine($"{book1.Title} book written by {book1.Authour} is {book1.Availablity}");
+            Console.WriteLine($"{book2.Title} book written by {book2.Authour} is {book2.Availablity}");
+            Console.WriteLine($"{book3.Title} book written by {book3.Authour} is {book3.Availablity}");
+
             Console.ReadLine();
         }
 
