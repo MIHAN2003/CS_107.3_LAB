@@ -4,35 +4,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Q1
+namespace q1
 {
-    public class Animal
+    public class Shape
     {
-      public class Shape
+        public string colour;
+        public double properties;
+        public virtual void Draw()
         {
-           
+
+        }
+        public void CalculateArea()
+        {
 
         }
     }
-    public class Dog : Animal 
+    public class Circle : Shape
     {
-        public void NumberofLegs()
+        private string pass;
+        public Circle(string Pass)
         {
-            Console.Write("I have 4 Legs");
+            pass = Pass;
+            if (pass != "password")
+            {
+                throw new ArgumentException("Password is invalid", nameof(pass));
+            }
+        }
+
+        public override void Draw()
+        {
+            Console.Write("this is a circle");
         }
     }
+
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            dog.Speak();
-            dog.NumberofLegs();
+            Circle circle = new Circle("password");
+            circle.Draw();
 
             Console.ReadLine();
-
-         
-
         }
+
+
+
     }
 }
